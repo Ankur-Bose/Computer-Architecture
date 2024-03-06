@@ -1,0 +1,27 @@
+module and2gate(input a, input b, input c)
+
+
+Testbench
+module and2gate_tb;
+	reg a;
+reg b;
+wire c;
+and2gate uut(.a(a), .b(b), .c(c));		[uut :- unit under test]
+	initial begin
+		a=0;		//input
+		b=0;		//input
+		#100;		//delay
+		
+		a=0;
+b=1;
+#100;
+
+a=1;
+b=0;
+#100;
+
+a=1;
+b=1;
+#100
+end
+endmodule
