@@ -1,3 +1,4 @@
+Tristate
 module tristate(
     input i,
     input cnt,
@@ -30,4 +31,46 @@ module tristate_tb;
     $dumpvars(0,tristate_tb);
     
     end
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compliment
+module twocompi(input [3:0]a_i, output [3:0]twos, output [3:0]also_twos_comp);
+    assign twos = ~a_i + 1'b1;
+    assign also_twos_comp = -a_i;
+endmodule
+
+
+module two_tb;
+    reg [3:0]a_i;
+    wire [3:0]twocomp;
+    wire [3:0]al_twocompi;
+    twocompi uut(.a_i(a_i),.twos(twocomp),.also_twos_comp(al_twocompi));
+    initial begin
+    a_i = 5;
+    #100;
+        end 
 endmodule
