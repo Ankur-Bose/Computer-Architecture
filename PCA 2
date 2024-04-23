@@ -1,0 +1,24 @@
+// tristate buffer 
+module tristatebuffer(
+    input i,
+    input cnt,
+    output z
+    );
+    assign z = (cnt&i)|(~cnt&'bz);
+endmodule
+
+
+//Majority 
+(K-map)
+module majorty(input [2:0]a, output z);
+assign z = (a[0]&a[2]|
+            a[0]&a[1]|
+            a[1]&a[2]);
+endmodule
+
+//twos compliment
+module twoscompliment(input [3:0]a, output [3:0]out);
+assign out = ~a + 1'b1;
+endmodule
+
+//
